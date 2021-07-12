@@ -1,0 +1,364 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.DrawingPad {
+    /* height: 100vh;
+    background-color: black; */
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.MenuContainer {
+    background-color: #D6ECEF;
+    margin-top: 4rem;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DrawingPage {
+    /* background-color: black; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.MainMenu {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    animation: FadeInOpacity 3.3s linear 1 normal forwards;
+}
+
+@keyframes FadeInOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.MainMenuNav, .DrawSubMenu {
+    list-style: none;
+    display: block;
+    background-color: #D6ECEF;
+    height: fit-content;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.MainMenuNav li {
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: fit-content;
+}
+
+.MainMenuNav img, .DrawSubMenu img {
+    width: 50px;
+    height: 50px;
+}
+
+.MainMenuNav button, .MainMenuNav input, .DrawSubMenu button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    top: 0;
+    margin: none;
+}
+
+.DrawSubMenu li {
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    /* height: fit-content; */
+}
+
+.NormalScreenButton {
+    display: none;
+}
+
+.ColorPicker {
+    border-radius: 100%;
+    background-color: transparent;
+    height: 45px;
+    width: 42px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.ColorPicker::-webkit-color-swatch, .DocumentColorPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 100%;
+}
+
+.DocumentColorPicker {
+    border-radius: 100%;
+    background-color: transparent;
+    height: 37px;
+    width: 34px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.dropDownContent {
+    /* visibility: hidden; */
+    list-style-type: none;
+    z-index: 2;
+    width: fit-content;
+    height: fit-content;
+}
+
+.dropDownContent li {
+    background-color: #333;
+}
+
+.DrawSubMenu button:hover {
+    background-color: #a8d9e1;
+    cursor: pointer;
+}
+
+.DrawMenu {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.MessageBox {
+    z-index: 10;
+    width: 25%;
+    height: 25%;
+    background-color: #a8d9e1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: justify;
+    border-radius: 20px;
+    padding: 1rem;
+    /* visibility: hidden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.MessageBoxButtons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MessageBoxButtons button {
+    /* margin: 4rem; */
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #61b0bb;
+    cursor: pointer;
+}
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 16px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #a8d9e1;
+}
+
+/* Camera CSS */
+
+.CameraAccess {
+    margin: auto;
+    z-index: 3;
+    visibility: hidden;
+    /* background-color: rgb(236, 181, 63); */
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 90vh;
+    width: 25vw;
+    display: block;
+    border-radius: 20px;
+}
+
+.CloseCameraAccessButton {
+    position: fixed;
+    border: none;
+    padding: 2px;
+    font-size: x-large;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+}
+
+#video {
+    margin-top: 2rem;
+    width: 80%;
+    height: 100%;
+}
+
+#snap {
+    padding: 1rem;
+    border-radius: 100%;
+    background-color: red;
+    border: 4px solid white;
+    margin: 10px;
+}
+
+#snap:hover {
+    transform: scale(1.2);
+    background-color: red;
+    border: 4px solid white;
+}
+
+#CameraCanvas {
+    display: none;
+}
+
+.photoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photos {
+    width: 80%;
+    height: 80%;
+    margin: 1rem;
+    border-style: dashed;
+    border-color: white;
+    padding: 2px;
+    filter: none;
+}
+
+.AddSnappedImageToCanvas {
+    border-radius: 20px;
+    width: 4rem;
+    border: none;
+    box-shadow: 5px 5px 20px black;
+    cursor: pointer;
+}
+
+/* Splash Screen */
+
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 20;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash.display-none {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -20;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    transition: all 1s;
+    
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    margin: 1rem;
+}
+
+.TechnologiesUsed img{
+    width: 250px;
+    height: 160px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- For Editable Text Box -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"></script> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="DrawingPad">
+        <div class="MainMenu">
+
+            <ul class="MainMenuNav">
+                <li><button onclick="ShowMessageBox()"><img src="./Resources/Page.png" alt="New Page"></button></li>
+
+                <li><button title="Clear Canvas" class="ClearCanvas" type="color">
+                        <img src="./Resources/delete-bin.png" alt=""></button></li>
+                <li><button><input title="Change Canvas Color" class="DocumentColorPicker" type="color" id="colorpicker"
+                            value="#ffffff"></button></li>
+
+                <li><button class="FullScreen" onclick="FullScreen()" title="Full Screen"><img
+                            src="./Resources/full-screen.png" alt="Text"></button>
+
+                    <button class="NormalScreenButton" onclick="NormalScreen()" title="Exit Full Screen"><img
+                            src="./Resources/normal-screen.png" alt="Text"></button>
+                </li>
+
+            </ul>
+
+        </div>
+        <canvas id="DrawingPage" class="DrawingPage"></canvas>
+
+    </div>
+    <script src="./anime.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

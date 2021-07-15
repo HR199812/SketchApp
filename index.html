@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="MainMenu">
 
             <ul class="MainMenuNav">
@@ -53,6 +53,31 @@
 
         </div>
         <canvas id="DrawingPage" class="DrawingPage"></canvas>
+
+        <div class="DrawMenu">
+
+            <ul class="DrawSubMenu">
+
+                <li><button title="Pencil" onclick="ChangeStrokeWidth(1)"><img src="./Resources/pencil.png"
+                            alt=""></button>
+                </li>
+                <li><button title="Pen" onclick="ChangeStrokeWidth(3)"><img src="./Resources/Pen.png" alt=""></button>
+                </li>
+                <li><button title="Marker" onclick="ChangeStrokeWidth(5)"><img src="./Resources/Marker.png"
+                            alt=""></button>
+                </li>
+                <li><button title="Paint Brush" onclick="ChangeStrokeWidth(10)"><img src="./Resources/Brush.png"
+                            alt=""></button></li>
+                <li><button id="SprayButton" title="Spray"><img src="./Resources/spray.png" alt=""></button></li>
+                <li> <button title="Eraser" onclick="EraseCanvasDrawing(10)"><img src="./Resources/1.png"
+                            alt=""></button></li>
+                <li><button><input title="Color Palette" class="ColorPicker" type="color" id="colorpicker"
+                            value="#000000" onchange="ColorChangeValue(value)"></button></li>
+                <li><button onclick="HideDrawingTools()" title="Done"><img id="changeIcon" src="./Resources/done.png"
+                            alt=""></button></li>
+            </ul>
+
+        </div>
 
     </div>
     <script src="./anime.js"></script>

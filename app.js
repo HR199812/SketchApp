@@ -51,6 +51,43 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
     document.addEventListener('mousemove', sketch);
 });
 
+//Show Message Box
+function ShowMessageBox() {
+    drawingPad.style.opacity = "0.4";
+    // msgBox.style.visibility = 'visible';
+
+    anime({
+        targets: '.MessageBox',
+        translateY: [
+            { value: -900, duration: 500 },
+            { value: 0, duration: 500 },
+        ]
+    });
+
+    anime({
+        target: '.MessageBox',
+        opacity: [
+            { value: 0, duration: 500 },
+            { value: 1, duration: 500 },
+        ]
+    })
+}
+
+
+//Close Message box
+function CloseMessageBox() {
+    anime({
+        targets: '.MessageBox',
+        translateY: [
+            { value: 0, duration: 500 },
+            { value: -900, duration: 500 },
+        ]
+    });
+    drawingPad.style.opacity = "1";
+
+    // msgBox.style.visibility = 'hidden';
+
+}
 
 //Full Screen Mode
 function FullScreen() {

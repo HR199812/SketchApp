@@ -37,10 +37,27 @@
             <ul class="MainMenuNav">
                 <li><button onclick="ShowMessageBox()"><img src="./Resources/Page.png" alt="New Page"></button></li>
 
+                <li><button class="dropbtn" onclick="DownloadBoard('JPEG')"><img src="./Resources/download.png"
+                            alt="Download Button"></button></li>
+
                 <li><button title="Clear Canvas" class="ClearCanvas" type="color">
                         <img src="./Resources/delete-bin.png" alt=""></button></li>
                 <li><button><input title="Change Canvas Color" class="DocumentColorPicker" type="color" id="colorpicker"
                             value="#ffffff"></button></li>
+
+                <li>
+
+                    <div class="dropdown">
+                        <button class="ChooseFileDD dropbtn"><img src="./Resources/camera.png" alt="Add Image"></button>
+                        <div class="dropdown-content">
+                            <button onclick="ChooseFile()">Upload From Device</button>
+                            <button onclick="OpenCameraCanvas()">Take a Picture</button>
+                        </div>
+                    </div>
+                </li>
+
+                <li><button onclick="ShowDrawingTools()" title="Tools"><img src="./Resources/draw.png"
+                            alt="Draw"></button></li>
 
                 <li><button class="FullScreen" onclick="FullScreen()" title="Full Screen"><img
                             src="./Resources/full-screen.png" alt="Text"></button>
@@ -98,6 +115,8 @@
     <!-- Button to upload an image -->
     <input onchange="readURL(this)" type="file" name="ImageUpload" hidden id="ImageUpload"
         accept="image/png, image/jpeg">
+
+
 
     <script src="./anime.js"></script>
     <script src="./app.js"></script>

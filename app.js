@@ -7,8 +7,10 @@ var drawingPad = document.querySelector('.DrawingPad');
 var documentColorCode = document.querySelector('.DocumentColorPicker');
 var fullScreen = document.querySelector('.FullScreen');
 var normalScreen = document.querySelector('.NormalScreenButton');
+var msgBox = document.querySelector('.MessageBox');
 var colorPicker = document.querySelector('.ColorPicker');
 let isSpray = false;
+
 
 //Hide Drawing Tools
 function HideDrawingTools() {

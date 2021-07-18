@@ -78,28 +78,27 @@
             </ul>
 
         </div>
-
-        <div class="MessageBox">
-            <div>
-                <p><b>All your Progress will get lost.</b><br>
-                    Download the current progress to save it.<br>
-                    Press <b>Ok</b> to create a new document.
-                </p>
-                <div class="MessageBoxButtons">
-                    <div style="width: 60%;">
-                        <button onclick="NewDocument()">Ok</button>
-                        <button onclick="CloseMessageBox()" style="float: right;">Cancel</button>
-                    </div>
+    </div>
+    <div class="MessageBox">
+        <div>
+            <p><b>All your Progress will get lost.</b><br>
+                Download the current progress to save it.<br>
+                Press <b>Ok</b> to create a new document.
+            </p>
+            <div class="MessageBoxButtons">
+                <div style="width: 60%;">
+                    <button onclick="NewDocument()">Ok</button>
+                    <button onclick="CloseMessageBox()" style="float: right;">Cancel</button>
                 </div>
             </div>
         </div>
-
-        <!-- Button to upload an image -->
-        <input onchange="readURL(this)" type="file" name="ImageUpload" hidden id="ImageUpload"
-            accept="image/png, image/jpeg">
-
-
     </div>
+
+
+    <!-- Button to upload an image -->
+    <input onchange="readURL(this)" type="file" name="ImageUpload" hidden id="ImageUpload"
+        accept="image/png, image/jpeg">
+
     <script src="./anime.js"></script>
     <script src="./app.js"></script>
 </body>

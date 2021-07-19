@@ -116,7 +116,44 @@
     <input onchange="readURL(this)" type="file" name="ImageUpload" hidden id="ImageUpload"
         accept="image/png, image/jpeg">
 
+    <!-- Camera Canvas -->
+    <div class="CameraAccess">
+        <ul style="list-style: none;">
+            <li>
+                <button class="CloseCameraAccessButton" onclick="CloseCameraAccessView()">X</button>
+            </li>
+        </ul>
+        <div style="text-align: center;">
+            <video id="video"></video>
+            <canvas id="CameraCanvas" width="640" , height="480"></canvas>
+        </div>
+        <div style="text-align: center;">
+            <button id="snap" title="Snap"></button>
+        </div>
 
+        <!-- <div style="text-align: center;">
+            <select name="Filters" id="Filters">
+                <option value="none">Normal</option>
+                <option value="grayscale(100%)">Grayscale</option>
+                <option value="sepia(100%)">Sepia</option>
+                <option value="invert(100%)">Invert</option>
+                <option value="hue-rotate(90deg)">Hue</option>
+                <option value="blur(10px)">Blur</option>
+                <option value="contrast(200%)">Contrast</option>
+                <option value = "brightness(0.4)">Brightness</option>
+                <option value = "opacity(25%)">Opacity</option>
+                <option value = "saturate(30%)">Saturate</option>
+            </select>
+        </div> -->
+
+        <div class="photoContainer">
+            <img class="photos"></img>
+        </div>
+        <div style="text-align: center;">
+            <button class="AddSnappedImageToCanvas">Add</button>
+        </div>
+
+    </div>
 
     <script src="./anime.js"></script>
     <script src="./app.js"></script>

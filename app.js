@@ -11,6 +11,12 @@ var msgBox = document.querySelector('.MessageBox');
 var colorPicker = document.querySelector('.ColorPicker');
 let isSpray = false;
 
+//Variables for Camera
+var photos = document.querySelector('.photos');
+var video = document.getElementById('video');
+var cameraCanvas = document.getElementById('CameraCanvas');
+var cameraCanvasContext = cameraCanvas.getContext("2d");
+
 
 //Hide Drawing Tools
 function HideDrawingTools() {
@@ -23,6 +29,24 @@ function HideDrawingTools() {
     });
 }
 
+//Upload Image
+function ChooseFile() {
+
+    document.getElementById("ImageUpload").click();
+}
+
+//Download Canvas as JPEG
+function DownloadBoard(str) {
+
+    // let image = canvas.toDataURL("image/jpeg", 1.0).replace("image/png", "image/octet-stream");
+
+    let image = canvas.toDataURL("image/png", 0.1);
+    let link = document.createElement('a');
+    link.download = "my-image.jpg";
+    link.href = image;
+    link.click();
+
+}
 
 
 // Change Canvas Color

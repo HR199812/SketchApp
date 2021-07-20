@@ -17,6 +17,18 @@ var video = document.getElementById('video');
 var cameraCanvas = document.getElementById('CameraCanvas');
 var cameraCanvasContext = cameraCanvas.getContext("2d");
 
+//Show Drawing Tools
+function ShowDrawingTools() {
+
+    anime({
+        targets: '.DrawMenu',
+        translateY: [
+            { value: -90, duration: 500 },
+            { value: 0, duration: 500 },
+        ]
+    });
+
+}
 
 //Hide Drawing Tools
 function HideDrawingTools() {

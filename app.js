@@ -11,6 +11,7 @@ var msgBox = document.querySelector('.MessageBox');
 var colorPicker = document.querySelector('.ColorPicker');
 let isSpray = false;
 
+
 //Variables for Camera
 var photos = document.querySelector('.photos');
 var video = document.getElementById('video');
@@ -60,6 +61,27 @@ function DownloadBoard(str) {
 
 }
 
+//Change Stroke Color
+let pencilColor = `#000000`;
+function ColorChangeValue(val) {
+    pencilColor = `${val}`;
+}
+
+//Change Stroke width on select of type of tool
+let strokeLine = '';
+function ChangeStrokeWidth(val) {
+
+    isSpray = false;
+    strokeLine = val;
+    eraser = 0;
+}
+
+
+//Eraser Variable to save val to indicate that eraser is selected
+let eraser;
+function EraseCanvasDrawing(val) {
+    eraser = val;
+}
 
 // Change Canvas Color
 documentColorCode.addEventListener("input", () => {

@@ -80,6 +80,7 @@ function ChangeStrokeWidth(val) {
 //Eraser Variable to save val to indicate that eraser is selected
 let eraser;
 function EraseCanvasDrawing(val) {
+    isSpray = false;
     eraser = val;
 }
 
@@ -149,6 +150,22 @@ function CloseMessageBox() {
 
 }
 
+//New Document
+function NewDocument() {
+    drawingPad.style.opacity = "1";
+
+    anime({
+        targets: '.MessageBox',
+        translateY: [
+            { value: 0, duration: 500 },
+            { value: -900, duration: 500 },
+        ]
+    });
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawingPad.style.backgroundColor = "white";
+}
+
 //Full Screen Mode
 function FullScreen() {
 
@@ -198,8 +215,25 @@ function sketch(event) {
     ctx.beginPath();
 
 
-    ctx.lineWidth = strokeLine;
-    ctx.strokeStyle = `${pencilColor}`;
+    if (isSpray) {
+        ctx.lineWidth = 10;
+        ctx.fillStyle = `${pencilColor}`;
+
+        // Filling pixels around the brush radius with randomized X,Y value near it.
+        for (var i = 50; i--;) {
+            var radius = 20;
+            var offsetX = Math.floor(Math.random() * (-radius - radius + 1)) + -radius;
+            var offsetY = Math.floor(Math.random() * (-radius - radius + 1)) + -radius;
+            ctx.fillRect(event.clientX + offsetX, event.clientY + offsetY, 1, 1);
+        }
+    }else if(eraser){
+        ctx.lineWidth = eraser;
+        ctx.strokeStyle = `white`;
+    }
+    else{
+        ctx.lineWidth = strokeLine;
+        ctx.strokeStyle = `${pencilColor}`;
+    }
 
     // Sets the end of the lines drawn
     // to a round shape.

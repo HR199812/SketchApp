@@ -394,7 +394,7 @@
         left: 0;
         bottom: 0;
         right: 0;
-        height: 90vh;
+        height: 95vh;
         width: 80%;
         display: block;
         border-radius: 20px;
@@ -402,12 +402,11 @@
 
     #video {
         margin-top: 2rem;
-        width: 90%;
-        height: 60%;
+        width: 85%;
     }
     
     .photos {
-        width: 90%;
+        width: 85%;
         height: 100%;
         margin: 1rem;
         border-style: dashed;
@@ -425,5 +424,26 @@
         font-size: medium;
         box-shadow: 5px 5px 20px black;
         cursor: pointer;
+    }
+
+    .MessageBox {
+        z-index: 10;
+        width: 60%;
+        height: 25%;
+        background-color: #a8d9e1;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: justify;
+        border-radius: 20px;
+        padding: 1rem;
+        /* visibility: hidden; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
     }
 }

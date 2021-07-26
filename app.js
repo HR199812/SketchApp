@@ -24,7 +24,7 @@ function ShowDrawingTools() {
     anime({
         targets: '.DrawMenu',
         translateY: [
-            { value: -90, duration: 500 },
+            // { value: -90, duration: 500 },
             { value: 0, duration: 500 },
         ]
     });
@@ -37,7 +37,7 @@ function HideDrawingTools() {
         targets: '.DrawMenu',
         translateY: [
             { value: 0, duration: 500 },
-            { value: -90, duration: 500 },
+            { value: -150, duration: 500 },
         ]
     });
 }
@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         targets: '.DrawMenu',
         translateY: [
             { value: 0, duration: 500 },
-            { value: -90, duration: 500 },
+            { value: -150, duration: 500 },
         ]
     });
     setTimeout(() => {

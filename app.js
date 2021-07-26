@@ -111,10 +111,13 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
     document.addEventListener('mouseup', stopPainting);
     document.addEventListener('mousemove', sketch);
 });
+document.querySelector(".DrawingPage").addEventListener("touchstart", (event) => {
+    alert('HI');
+});
 
-document.querySelector(".DrawingPage").addEventListener('touchstart', startPainting);
-document.querySelector(".DrawingPage").addEventListener('touchend', stopPainting);
-document.querySelector(".DrawingPage").addEventListener('touchmove', sketch);
+// document.querySelector(".DrawingPage").addEventListener('touchstart', startPainting);
+// document.querySelector(".DrawingPage").addEventListener('touchend', stopPainting);
+// document.querySelector(".DrawingPage").addEventListener('touchmove', sketch);
 
 //Show Message Box
 function ShowMessageBox() {

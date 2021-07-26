@@ -112,9 +112,9 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
     document.addEventListener('mousemove', sketch);
 });
 
-document.addEventListener('touchstart', startPainting);
-document.addEventListener('touchend', stopPainting);
-document.addEventListener('touchmove', sketch);
+document.querySelector(".DrawingPage").addEventListener('touchstart', startPainting);
+document.querySelector(".DrawingPage").addEventListener('touchend', stopPainting);
+document.querySelector(".DrawingPage").addEventListener('touchmove', sketch);
 
 //Show Message Box
 function ShowMessageBox() {

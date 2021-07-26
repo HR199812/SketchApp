@@ -111,7 +111,7 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
     document.addEventListener('mouseup', stopPainting);
     document.addEventListener('mousemove', sketch);
 });
-document.querySelector(".DrawingPage").addEventListener("touch", (event) => {
+document.querySelector(".DrawingPage").addEventListener("touchstart", (event) => {
     getPosition(event);
     document.querySelector(".DrawingPage").addEventListener('touchstart', startPainting);
     document.querySelector(".DrawingPage").addEventListener('touchend', stopPainting);

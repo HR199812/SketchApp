@@ -127,6 +127,7 @@ document.querySelector(".DrawingPage").addEventListener('touchend', function (e)
 
 document.querySelector(".DrawingPage").addEventListener('touchmove',function (e) {
     // var touch = e.touches[0];
+    alert('asdasd');
     var mouseEvent = new MouseEvent("mousemove", sketch);
     canvas.dispatchEvent(mouseEvent);
   }, false);

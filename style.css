@@ -394,7 +394,7 @@
         left: 0;
         bottom: 0;
         right: 0;
-        height: 95vh;
+        height: 90vh;
         width: 80%;
         display: block;
         border-radius: 20px;
@@ -403,6 +403,7 @@
     #video {
         margin-top: 2rem;
         width: 85%;
+        height: 50%;
     }
     
     .photos {

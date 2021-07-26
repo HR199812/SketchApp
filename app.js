@@ -164,7 +164,7 @@ function NewDocument() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawingPad.style.backgroundColor = "white";
-    documentColorCode.value = "white";
+    documentColorCode.value = '#FFFFFF';
 }
 
 //Full Screen Mode

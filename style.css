@@ -430,7 +430,7 @@
     .MessageBox {
         z-index: 10;
         width: 350px;
-        height: 250px;
+        height: 300px;
         background-color: #a8d9e1;
         position: absolute;
         top: 0;

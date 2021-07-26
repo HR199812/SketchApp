@@ -113,30 +113,20 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
 });
 
 
-document.querySelector(".DrawingPage").addEventListener('touchstart', function (e) {
-    mousePos = getPosition(e);
-    var touch = e.touches[0];
-    var mouseEvent = new MouseEvent("mousedown", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-    });
-    canvas.dispatchEvent(mouseEvent);
-}, false);
+document.querySelector(".DrawingPage").addEventListener('touchstart', (e) => {
+    getPosition(e);
+    document.addEventListener('mousedown', startPainting)
+}
+);
 
 document.querySelector(".DrawingPage").addEventListener('touchend', function (e) {
-    var mouseEvent = new MouseEvent("mouseup", stopPainting);
-    canvas.dispatchEvent(mouseEvent);
-}, false);
+    document.addEventListener("mouseup", stopPainting);
+});
 
 document.querySelector(".DrawingPage").addEventListener('touchmove', function (e) {
-    var touch = e.touches[0];
-    var mouseEvent = new MouseEvent("mousemove", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-    });
-    canvas.dispatchEvent(mouseEvent);
-}, false);
 
+    document.addEventListener("mousemove", sketch);
+});
 
 
 

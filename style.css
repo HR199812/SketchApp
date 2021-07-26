@@ -366,13 +366,64 @@
 @media screen and (max-width:767px){
     .MainMenuNav li {
         float: left;
-        margin-right: 5px;
-        margin-left: 5px;
+        margin-right: 2px;
+        margin-left: 2px;
         height: fit-content;
     }
 
     .MainMenuNav img, .DrawSubMenu img {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .DrawSubMenu li {
+        float: left;
+        margin-right: 2px;
+        margin-left: 2px;
+        /* height: fit-content; */
+    }
+
+    .CameraAccess {
+        margin: auto;
+        z-index: 3;
+        visibility: hidden;
+        /* background-color: rgb(236, 181, 63); */
+        background-color: #333;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 90vh;
+        width: 80%;
+        display: block;
+        border-radius: 20px;
+    }
+
+    #video {
+        margin-top: 2rem;
+        width: 90%;
+        height: 80%;
+    }
+    
+    .photos {
+        width: 90%;
+        height: 80%;
+        margin: 1rem;
+        border-style: dashed;
+        border-color: white;
+        padding: 2px;
+        filter: none;
+    }
+    
+    .AddSnappedImageToCanvas {
+        border-radius: 20px;
+        width: 4rem;
+        height: 2rem;
+        border: none;
+        font-weight: bold;
+        font-size: medium;
+        box-shadow: 5px 5px 20px black;
+        cursor: pointer;
     }
 }

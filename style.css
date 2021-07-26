@@ -403,12 +403,12 @@
     #video {
         margin-top: 2rem;
         width: 90%;
-        height: 80%;
+        height: 60%;
     }
     
     .photos {
         width: 90%;
-        height: 80%;
+        height: 100%;
         margin: 1rem;
         border-style: dashed;
         border-color: white;

@@ -112,6 +112,10 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
     document.addEventListener('mousemove', sketch);
 });
 
+document.addEventListener('touchstart', startPainting);
+document.addEventListener('touchend', stopPainting);
+document.addEventListener('touchmove', sketch);
+
 //Show Message Box
 function ShowMessageBox() {
     drawingPad.style.opacity = "0.4";
@@ -227,11 +231,11 @@ function sketch(event) {
             var offsetY = Math.floor(Math.random() * (-radius - radius + 1)) + -radius;
             ctx.fillRect(event.clientX + offsetX, event.clientY + offsetY, 1, 1);
         }
-    }else if(eraser){
+    } else if (eraser) {
         ctx.lineWidth = eraser;
         ctx.strokeStyle = `white`;
     }
-    else{
+    else {
         ctx.lineWidth = strokeLine;
         ctx.strokeStyle = `${pencilColor}`;
     }

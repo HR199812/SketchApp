@@ -113,20 +113,15 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
 });
 
 
-document.querySelector(".DrawingPage").addEventListener('touchstart', (e) => {
+canvas.addEventListener('touchstart', (e) => {
     getPosition(e);
-    document.addEventListener('mousedown', startPainting)
+    startPainting(e);
 }
 );
 
-document.querySelector(".DrawingPage").addEventListener('touchend', function (e) {
-    document.addEventListener("mouseup", stopPainting);
-});
+canvas.addEventListener('touchend', stopPainting);
 
-document.querySelector(".DrawingPage").addEventListener('touchmove', function (e) {
-
-    document.addEventListener("mousemove", sketch);
-});
+canvas.addEventListener('touchmove', (e) => { sketch(e) });
 
 
 

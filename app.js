@@ -113,10 +113,13 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
 });
 
 
-document.querySelector(".DrawingPage").addEventListener('touchstart', (e) => {
-    getPosition(e);
-    // var touch = e.touches[0];
-    var mouseEvent = new MouseEvent("mousedown", startPainting);
+document.querySelector(".DrawingPage").addEventListener('touchstart', function (e) {
+    mousePos = getPosition(e);
+    var touch = e.touches[0];
+    var mouseEvent = new MouseEvent("mousedown", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    });
     canvas.dispatchEvent(mouseEvent);
 }, false);
 
@@ -125,12 +128,15 @@ document.querySelector(".DrawingPage").addEventListener('touchend', function (e)
     canvas.dispatchEvent(mouseEvent);
 }, false);
 
-document.querySelector(".DrawingPage").addEventListener('touchmove',function (e) {
-    // var touch = e.touches[0];
-    alert('asdasd');
-    var mouseEvent = new MouseEvent("mousemove", sketch);
+document.querySelector(".DrawingPage").addEventListener('touchmove', function (e) {
+    var touch = e.touches[0];
+    var mouseEvent = new MouseEvent("mousemove", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    });
     canvas.dispatchEvent(mouseEvent);
-  }, false);
+}, false);
+
 
 
 

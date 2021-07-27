@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    touch-action: pan-down
+}
+
 .DrawingPad {
     /* height: 100vh;
     background-color: black; */
@@ -158,7 +162,6 @@
     justify-content: center;
 }
 
-
 .MessageBox {
     z-index: 10;
     width: 25%;
@@ -177,7 +180,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .MessageBoxButtons {
@@ -343,7 +345,6 @@
     text-align: center;
     justify-content: center;
     transition: all 1s;
-    
 }
 
 @keyframes fadeIn {
@@ -358,31 +359,28 @@
     margin: 1rem;
 }
 
-.TechnologiesUsed img{
+.TechnologiesUsed img {
     width: 250px;
     height: 160px;
 }
 
-@media screen and (max-width:767px){
+@media screen and (max-width:767px) {
     .MainMenuNav li {
         float: left;
         margin-right: 2px;
         margin-left: 2px;
         height: fit-content;
     }
-
     .MainMenuNav img, .DrawSubMenu img {
         width: 40px;
         height: 40px;
     }
-
     .DrawSubMenu li {
         float: left;
         margin-right: 2px;
         margin-left: 2px;
         /* height: fit-content; */
     }
-
     .CameraAccess {
         margin: auto;
         z-index: 3;
@@ -399,13 +397,11 @@
         display: block;
         border-radius: 20px;
     }
-
     #video {
         margin-top: 2rem;
         width: 85%;
         height: 50%;
     }
-    
     .photos {
         width: 85%;
         height: 100%;
@@ -415,7 +411,6 @@
         padding: 2px;
         filter: none;
     }
-    
     .AddSnappedImageToCanvas {
         border-radius: 20px;
         width: 4rem;
@@ -426,7 +421,6 @@
         box-shadow: 5px 5px 20px black;
         cursor: pointer;
     }
-
     .MessageBox {
         z-index: 10;
         width: 300px;
@@ -445,6 +439,5 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    
     }
 }

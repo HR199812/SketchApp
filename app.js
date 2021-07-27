@@ -115,13 +115,13 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
 
 canvas.addEventListener('touchstart', (e) => {
     getPosition(e);
-    startPainting(e);
+    startPainting;
 }
 );
 
 canvas.addEventListener('touchend', stopPainting);
 
-canvas.addEventListener('touchmove', (e) => { sketch(e) });
+canvas.addEventListener('touchmove', (e) => { sketch; });
 
 
 

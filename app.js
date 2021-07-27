@@ -113,16 +113,28 @@ document.querySelector(".DrawingPage").addEventListener("click", (event) => {
 });
 
 
-canvas.addEventListener('touchstart', (e)=>{
-    getPosition(e);
+canvas.addEventListener('touchstart', (e) => {
+    coords = getPosition(e);
 
-    document.addEventListener('touchstart', (e) => {
-        startPainting(e);
+    var touch = e.touches[0];
+    var mouseEvent = new MouseEvent("mousedown", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
     });
-    document.addEventListener('touchend', stopPainting);
-    document.addEventListener('touchmove', (e) => { sketch(e) });
-});
-
+    canvas.dispatchEvent(mouseEvent);
+}, false);
+canvas.addEventListener("touchend", function (e) {
+    var mouseEvent = new MouseEvent("mouseup", {});
+    canvas.dispatchEvent(mouseEvent);
+}, false);
+canvas.addEventListener("touchmove", function (e) {
+    var touch = e.touches[0];
+    var mouseEvent = new MouseEvent("mousemove", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    });
+    canvas.dispatchEvent(mouseEvent);
+}, false);
 
 
 

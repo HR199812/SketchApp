@@ -117,7 +117,7 @@ canvas.addEventListener('touchstart', (e) => {
     coords = getPosition(e);
 
     var touch = e.touches[0];
-    var mouseEvent = new MouseEvent("mousedown", startPainting);
+    var mouseEvent = new MouseEvent("mousedown", startPainting(touch));
     canvas.dispatchEvent(mouseEvent);
 }, false);
 
@@ -128,7 +128,7 @@ canvas.addEventListener("touchend", function (e) {
 
 canvas.addEventListener("touchmove", function (e) {
     var touch = e.touches[0];
-    var mouseEvent = new MouseEvent("mousemove", sketch);
+    var mouseEvent = new MouseEvent("mousemove", sketch(touch));
     canvas.dispatchEvent(mouseEvent);
 }, false);
 

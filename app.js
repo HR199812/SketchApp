@@ -55,7 +55,7 @@ function DownloadBoard(str) {
 
     let image = canvas.toDataURL("image/png", 0.1);
     let link = document.createElement('a');
-    link.download = "my-image.jpg";
+    link.download = "my-image";
     link.href = image;
     link.click();
 

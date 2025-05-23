@@ -13,7 +13,7 @@ export default function Home() {
   const color = useStore((state) => state.color);
   const strokeWidth = useStore((state) => state.strokeWidth);
   const toolType = useStore((state) => state.toolType);
-  const ctxRef = useRef(null);
+  const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const isPaintingRef = useRef(false);
   const coordRef = useRef({ x: 0, y: 0 });
 
@@ -82,7 +82,7 @@ export default function Home() {
     ctx.lineWidth = strokeWidth;
 
     if (toolType === "spray") {
-      ctx.fillStyle = color;
+      ctx.fillStyle = color as string;
 
       for (let i = 50; i--; ) {
         const radius = 20;
@@ -93,7 +93,7 @@ export default function Home() {
     } else if (toolType === "eraser") {
       ctx.strokeStyle = `white`;
     } else {
-      ctx.strokeStyle = color;
+      ctx.strokeStyle = color as string;
     }
 
     ctx.lineJoin = ctx.lineCap = "round";
@@ -113,6 +113,7 @@ export default function Home() {
     if (!boardRef) return;
 
     const canvas = boardRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext("2d");
     ctxRef.current = ctx;
 
@@ -135,9 +136,11 @@ export default function Home() {
       ctxRef.current?.beginPath();
     };
 
-    const draw = (e) => {
+    const draw = (e: MouseEvent | TouchEvent) => {
       sketch(e);
     };
+
+    if (!canvas) return;
 
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);

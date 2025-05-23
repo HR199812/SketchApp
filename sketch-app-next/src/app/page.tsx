@@ -42,20 +42,38 @@ export default function Home() {
     }
   };
 
-  const getPosition = (event: unknown) => {
+  const getPosition = (event: MouseEvent | TouchEvent) => {
     if (!boardRef.current) return;
     const canvas = boardRef.current;
     const rect = canvas.getBoundingClientRect();
-    const x = (event.clientX || event.touches?.[0]?.clientX) - rect.left;
-    const y = (event.clientY || event.touches?.[0]?.clientY) - rect.top;
+
+    // Type-safe client coordinates
+    const clientX =
+      "touches" in event ? event.touches[0]?.clientX : event.clientX;
+
+    const clientY =
+      "touches" in event ? event.touches[0]?.clientY : event.clientY;
+
+    if (!clientX || !clientY) return;
+
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
     coordRef.current = { x, y };
   };
 
-  const sketch = (event: unknown) => {
+  const sketch = (event: MouseEvent | TouchEvent) => {
     if (!isPaintingRef.current || !ctxRef.current) return;
 
     const ctx = ctxRef.current;
     const coord = coordRef.current;
+
+    const currentX =
+      "touches" in event ? event.touches[0]?.clientX : event.clientX;
+
+    const currentY =
+      "touches" in event ? event.touches[0]?.clientY : event.clientY;
+
+    if (!currentX || !currentY) return;
 
     ctx.beginPath();
 
@@ -70,7 +88,7 @@ export default function Home() {
         const radius = 20;
         const offsetX = Math.floor(Math.random() * (2 * radius + 1)) - radius;
         const offsetY = Math.floor(Math.random() * (2 * radius + 1)) - radius;
-        ctx.fillRect(event.clientX + offsetX, event.clientY + offsetY, 1, 1);
+        ctx.fillRect(currentX + offsetX, currentY + offsetY, 1, 1);
       }
     } else if (toolType === "eraser") {
       ctx.strokeStyle = `white`;
@@ -107,7 +125,7 @@ export default function Home() {
 
     const canvas = boardRef.current;
 
-    const startPainting = (e: unknown) => {
+    const startPainting = (e: MouseEvent | TouchEvent) => {
       isPaintingRef.current = true;
       getPosition(e);
     };

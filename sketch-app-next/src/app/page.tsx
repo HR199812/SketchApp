@@ -32,8 +32,6 @@ export default function Home() {
     if (isFullScreen) {
       if (document.exitFullscreen) {
         document.exitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
       }
       setIsFullScreen(false);
     } else {

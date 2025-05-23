@@ -37,8 +37,6 @@ export default function Home() {
     } else {
       if (document.body.requestFullscreen) {
         document.body.requestFullscreen();
-      } else if (document.body.msRequestFullscreen) {
-        document.body.msRequestFullscreen();
       }
       setIsFullScreen(true);
     }

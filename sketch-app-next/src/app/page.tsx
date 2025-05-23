@@ -32,8 +32,6 @@ export default function Home() {
     if (isFullScreen) {
       if (document.exitFullscreen) {
         document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
       }
@@ -41,8 +39,6 @@ export default function Home() {
     } else {
       if (document.body.requestFullscreen) {
         document.body.requestFullscreen();
-      } else if (document.body.webkitRequestFullscreen) {
-        document.body.webkitRequestFullscreen();
       } else if (document.body.msRequestFullscreen) {
         document.body.msRequestFullscreen();
       }

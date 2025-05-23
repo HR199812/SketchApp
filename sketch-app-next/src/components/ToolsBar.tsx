@@ -16,7 +16,7 @@ const Toolsbar = () => {
   const toolType = useStore((state) => state.toolType);
   const colorInputRef = useRef(null);
 
-  const color = useStore((state) => state.color);
+  const color = useStore((state) => state.color) as string;
   const setColor = useStore((state) => state.setColor);
 
   const handleColorChange = (e: {

@@ -16,7 +16,7 @@ export default function CameraAcess() {
         </div>
 
         <div className="photoContainer">
-          <img className="photos"></img>
+          {/* <img className="photos"></img> */}
         </div>
         <div>
           <button className="AddSnappedImageToCanvas">Add</button>

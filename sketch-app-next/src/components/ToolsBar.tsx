@@ -8,10 +8,12 @@ import {
   FaEraser,
 } from "react-icons/fa";
 import useStore from "../../store/store";
-import { SetStateAction, useRef } from "react";
+import { SetStateAction, useEffect, useRef } from "react";
 
 const Toolsbar = () => {
   const setToolType = useStore((state) => state.setToolType);
+  const setStrokeWidth = useStore((state) => state.setStrokeWidth);
+  const toolType = useStore((state) => state.toolType);
   const colorInputRef = useRef(null);
 
   const color = useStore((state) => state.color);
@@ -23,6 +25,30 @@ const Toolsbar = () => {
     const colorValue = e.target.value;
     setColor(colorValue);
   };
+
+  useEffect(() => {
+    switch (toolType) {
+      case "pen":
+        setStrokeWidth(3);
+        break;
+      case "marker":
+        setStrokeWidth(6);
+        break;
+      case "spray":
+        setStrokeWidth(10);
+        break;
+      case "brush":
+        setStrokeWidth(8);
+        break;
+      case "eraser":
+        setStrokeWidth(12);
+        break;
+      default:
+        setStrokeWidth(1);
+        break;
+    }
+  }, [toolType]);
+
   return (
     <div className="border rounded-lg w-fit h-fit bg-white flex flex-row gap-4 justify-between p-2 shadow-md">
       <ul className="flex gap-4">

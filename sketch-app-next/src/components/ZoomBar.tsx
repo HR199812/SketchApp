@@ -1,7 +1,6 @@
 export default function ZoomBar() {
-
   return (
-    <div className="fixed bottom-4 right-2 sm:right-4 z-50 flex flex-col sm:flex-row gap-2 bg-white border rounded-lg shadow-md p-2">
+    <div className="fixed bottom-2 right-2 z-50 hidden md:flex gap-4 bg-white border rounded-lg shadow-md p-3">
       {/* Undo/Redo Controls */}
       <div className="flex gap-2">
         <button
@@ -48,7 +47,7 @@ export default function ZoomBar() {
       </div>
 
       {/* Zoom Controls */}
-      <div className="hidden md:flex items-center gap-2">
+      <div className="flex items-center gap-2">
         <button
           className="p-2 hover:bg-gray-100 rounded transition-colors"
           title="Zoom out (Cmd+-)"

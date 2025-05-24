@@ -182,7 +182,7 @@ export default function Home() {
 
       {showMessageCard && <MessageBox DownloadBoard={DownloadBoard} />}
       {/* Right bottom Zoom-Bar */}
-      <div className="absolute bottom-12 right-2 transform z-10">
+      <div className="absolute bottom-12 md:bottom-1 right-2 transform z-10">
         <ZoomBar />
       </div>
     </div>

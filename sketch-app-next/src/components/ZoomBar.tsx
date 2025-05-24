@@ -1,7 +1,7 @@
 export default function ZoomBar() {
 
   return (
-    <div className="fixed bottom-1 md:bottom-1 right-2 z-50 flex gap-4 bg-white border rounded-lg shadow-md p-3">
+    <div className="fixed bottom-18 md:bottom-1 right-2 z-50 flex gap-4 bg-white border rounded-lg shadow-md p-3">
       {/* Undo/Redo Controls */}
       <div className="flex gap-2">
         <button

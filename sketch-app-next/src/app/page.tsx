@@ -162,7 +162,7 @@ export default function Home() {
   }, [toolType, strokeWidth]);
 
   return (
-    <div className="relative min-h-screen font-[family-name:var(--font-geist-sans)]">
+    <div className="relative max-h-screen h-screen w-screen overflow-hidden touch-none select-none font-[family-name:var(--font-geist-sans)]">
       {/* Top Centered ToolsBar */}
       <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-10">
         <ToolsBar />

@@ -50,8 +50,8 @@ const Toolsbar = () => {
   }, [toolType]);
 
   return (
-    <div className="border rounded-lg w-fit h-fit bg-white flex flex-row gap-4 justify-between p-2 shadow-md">
-      <ul className="flex gap-4">
+    <div className="border rounded-lg w-fit h-fit bg-white flex flex-row justify-between p-2 shadow-md">
+      <ul className="flex sm:gap-1 md:gap-4">
         <li>
           <button
             className="p-2 hover:bg-gray-100 rounded transition-colors"

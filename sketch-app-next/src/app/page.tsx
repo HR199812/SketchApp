@@ -164,7 +164,7 @@ export default function Home() {
   return (
     <div className="relative max-h-screen h-screen w-screen overflow-hidden touch-none select-none font-[family-name:var(--font-geist-sans)]">
       {/* Top Centered ToolsBar */}
-      <div className="absolute top-8 md:top-4 left-1/2 -translate-x-1/2 z-10 w-max max-w-full px-2">
+      <div className="absolute md:top-4 left-1/2 -translate-x-1/2 z-10 w-max max-w-full px-2">
         <ToolsBar />
       </div>
 

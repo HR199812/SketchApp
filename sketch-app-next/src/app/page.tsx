@@ -164,7 +164,7 @@ export default function Home() {
   return (
     <div className="relative max-h-screen h-screen w-screen overflow-hidden touch-none select-none font-[family-name:var(--font-geist-sans)]">
       {/* Top Centered ToolsBar */}
-      <div className="absolute md:top-4 left-1/2 -translate-x-1/2 z-10 w-max max-w-full px-2">
+      <div className="absolute top-8 md:top-4 left-1/2 -translate-x-1/2 z-10 w-max max-w-full px-2">
         <ToolsBar />
       </div>
 
@@ -182,7 +182,7 @@ export default function Home() {
 
       {showMessageCard && <MessageBox DownloadBoard={DownloadBoard} />}
       {/* Right bottom Zoom-Bar */}
-      <div className="absolute bottom-12 md:bottom-1 right-2 transform z-10">
+      <div className="absolute bottom-12 right-2 transform z-10">
         <ZoomBar />
       </div>
     </div>
